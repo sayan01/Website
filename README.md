@@ -1,2 +1,2 @@
 # Website
-Repository for website
+This is a personal website!
