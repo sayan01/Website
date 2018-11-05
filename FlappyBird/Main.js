@@ -27,7 +27,7 @@ function draw() {
 		pipes.push(new Pipe());
 		bird.gravity+=0.03;
 		bird.lift-=0.3;
-		
+
 		if(Pipe.gapmax > 50){
 			Pipe.gapmax--;
 		}
@@ -80,7 +80,11 @@ function keyPressed(){
 	if(!gameOverbool){
 		loop();
 	}
+	if(key === 'R'){
+		location.reload();
+	}
 	 bird.jump();
+
 }
 function touchStarted(){
 	if(!gameOverbool){
