@@ -8,7 +8,6 @@ var score = 0;
 function setup() {
 	createCanvas(225,400);
 	background(50,50,100);
-	createP("Flappy Bird     by Sayan");
 	bird = new Bird();
 	pipes[0] = new Pipe();
 	noLoop();
