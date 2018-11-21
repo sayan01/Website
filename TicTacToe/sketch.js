@@ -44,7 +44,7 @@ function draw() {
     }
 }
 
-function mousePressed(){
+function mouseReleased(){
     if(gameover){   return; }
     mx = mouseX;
     my = mouseY;
