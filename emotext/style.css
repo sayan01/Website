@@ -9,6 +9,10 @@ textarea{
     margin-top: 50px;
     margin-bottom: 30px;
 }
+.subtext{
+    text-align: center;
+    padding-bottom: 50px;
+}
 #input{
     margin: 20px;
     width: 60%;
@@ -48,7 +52,8 @@ textarea{
 }
 #output {
     margin: 50px;
+    font-size: 1.75em;
 }
-#input, #submit, #output{
+#input, #submit{
     font-size: 1em;
 }
