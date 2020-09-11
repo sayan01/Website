@@ -1,0 +1,51 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+textarea{
+    resize: none;
+}
+.heading{
+    text-align: center;
+    font-size: 300%;
+}
+#input{
+    margin: 20px;
+    width: 60%;
+    border: dimgray solid 2px;
+    border-radius: 20px;
+    padding: 10px;
+}
+#parent{
+    text-align: center;
+}
+#output{
+    border:none;
+    text-align: center;
+}
+#output:focus, #input:focus, #submit{  
+    outline: none;
+}
+#submit{
+    padding: 12px;
+    border-radius: 20px;
+    background-color: dodgerblue;
+    border: none;
+    font-weight: 100;
+}
+#submit:hover{
+    background-color: #3F51B5;
+    color: white;
+    cursor: pointer;
+}
+#color1{
+    color: dodgerblue;
+}
+#color2{
+    color: #D32F2F;
+}
+#output {
+    margin: 50px;
+}
+#input, #submit, #output{
+    font-size: 2em;
+}
