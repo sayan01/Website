@@ -6,7 +6,8 @@ textarea{
 }
 .heading{
     text-align: center;
-    font-size: 300%;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 #input{
     margin: 20px;
@@ -27,10 +28,12 @@ textarea{
 }
 #submit{
     padding: 12px;
-    border-radius: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 50px;
     background-color: dodgerblue;
     border: none;
-    font-weight: 100;
+    font-weight: 1000;
 }
 #submit:hover{
     background-color: #3F51B5;
@@ -47,5 +50,5 @@ textarea{
     margin: 50px;
 }
 #input, #submit, #output{
-    font-size: 2em;
+    font-size: 1em;
 }
