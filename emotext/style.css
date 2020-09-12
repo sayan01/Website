@@ -51,8 +51,11 @@ textarea{
     color: #D32F2F;
 }
 #output {
-    margin: 50px;
     font-size: 1.75em;
+    width: 80%;
+    margin: auto;
+
+
 }
 #input, #submit{
     font-size: 1em;
