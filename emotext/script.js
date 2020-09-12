@@ -27,16 +27,16 @@ function submit(){
         var char = text.charAt(i);
         if(isAlpha(char)){
             var char2 = letter[char.charCodeAt(0)-65];
-            out += char2 + " ";
+            out += char2;
         }
         else if(isNum(char)){
             var char2 = number[char.charCodeAt(0)-48];
-            out += char2 + "";
+            out += char2;
         }
         else{
-            out += char + "";
-            continue;
+            out += char;
         }
+        out += " "
     }
     output.innerHTML = out;
     copy.disabled = out==="";
