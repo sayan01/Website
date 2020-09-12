@@ -27,7 +27,7 @@ textarea{
     border:none;
     text-align: center;
 }
-#output:focus, #input:focus, #submit{  
+#output, #input, #submit, #copy{  
     outline: none;
 }
 #submit{
@@ -54,9 +54,28 @@ textarea{
     font-size: 1.75em;
     width: 80%;
     margin: auto;
-
-
 }
 #input, #submit{
     font-size: 1em;
+}
+#copy{
+    background-color: #00BCD4;
+    font-family: Arial;
+    color: whitesmoke;
+    padding: 15px;
+    border-radius: 5px 30px 30px 30px;
+    border: none;
+    margin-top: 30px;
+}
+
+#copy:hover{
+    background-color: #0097A7;
+    cursor: pointer;
+}
+
+#copy:disabled{
+    cursor: not-allowed;
+    background-color: dimgray;
+    color: black;
+    display: none;
 }
