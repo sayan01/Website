@@ -32,7 +32,7 @@ body{
     margin: 2rem 20%;
 }
 .cuisine img{
-    width: 500px;
+    width: 600px;
     margin: 2rem auto;
     border: 3px solid black;
     border-radius: 25px;
@@ -51,7 +51,7 @@ body{
     margin: 2rem 20%;
 }
 .dest img{
-    width: 500px;
+    width: 600px;
     margin: 2rem auto;
     border: 3px solid black;
     border-radius: 25px;
@@ -98,5 +98,14 @@ body{
     }
     .cuisine p{
         margin: 2rem 2rem;
+    }
+    .cuisine img{
+        width: 400px;
+    }
+    .dest p{
+        margin: 2rem 2rem;
+    }
+    .dest img{
+        width: 400px;
     }
 }
