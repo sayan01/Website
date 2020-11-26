@@ -8,3 +8,24 @@
 .subtext{
     font-size: 1.5rem;
 }
+.card-title{
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    font-family: Helvetica;
+}
+.card-text{
+    color: #222;
+}
+.card{
+    border-radius: 20px;
+    padding: 20px 20px;
+    text-align: center;
+    width: 23rem;
+    margin: 35px auto;
+}
+.card a{
+    padding: 10px 25px;
+    margin: 10px 10px;
+    border-radius: 20px;
+}
