@@ -6,7 +6,8 @@ fetch(cproxyURL + feedURL).then(response => {
         parser = new DOMParser();
         xml = parser.parseFromString(text, 'text/xml');
         entries = xml.getElementsByTagName("entry");
-        for (var i = 0; i < entries.length; i++) {
+        var i = 0;
+        for (i = 0; i < entries.length; i++) {
             entry = entries[i].childNodes;
             for (var j = 0; j < entry.length; j++) {
                 if (entry[j].nodeName === 'link' && entry[j].getAttributeNode('rel').value === 'alternate') {
@@ -16,6 +17,10 @@ fetch(cproxyURL + feedURL).then(response => {
                     break;
                 }
             }
+        }
+        if (i != 0) {
+            blogh = document.querySelector('#blogheading');
+            blogh.setAttribute('style', 'display:inherit');
         }
     });
 });
