@@ -1,0 +1,133 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    color: white;
+    background-color: #000;
+}
+hr{
+    background-color: white;
+}
+hr.short{
+    margin:25px 35%;
+}
+.center{
+    text-align: center;
+}
+.heading{
+    margin: 0px;
+    background-color: #2a2a2a;
+}
+.heading span{
+    color: #5f5;
+}
+.sayn{
+    width: 150px;
+    display: block;
+    margin: auto auto;
+    z-index: -1;
+}
+.tag{
+    color: skyblue;
+    margin-bottom: 15px;
+}
+.tag span{
+    margin: 0px 15px;
+}
+.subheading{
+    font-size: xx-large;
+    color: #aaa;
+}
+.subheading b{
+    color: #ddd
+}
+.years{
+    font-size: medium;
+}
+.subpart{
+    margin: 20px;
+}
+.subpart h2{
+    font-style: italic;
+    font-weight: 800;
+}
+.links a{
+    text-decoration: none;
+}
+.hoverlink{
+    color: #00c33b;
+    font-weight: 600;
+    transition: color 0.2s, border 0.2s;
+    transition-timing-function: ease-in;
+}
+.hoverlink:hover{
+    color: #00922c;
+}
+.links img{
+    margin: 15px 5px;
+    transition: height 0.2s, margin 0.2s;
+}
+.links img:hover{
+    height: 40px;
+    margin: 0px 5px;
+}
+font a, font a:hover{
+    text-decoration: none;
+    color:inherit;
+}
+.bio p{
+    font-size: large;
+    padding: 0px 10%;
+}
+.bio p a{
+    color: inherit;
+    text-decoration: none;
+    border-bottom: dotted 2px gray;
+}
+@media only screen and (max-width: 800px){
+    .heading span{
+        display: none;
+    }
+}
+#bloglist{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card{
+    margin: 25px;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    flex: 0 1 40rem;
+    background-color: #222;
+}
+.card-title{
+    font-size: x-large ;
+}
+.card-text{
+    margin-top: 25px;
+}
+
+.card .btn{
+    padding: 10px 15%;
+    font-size: large;
+    border-radius: 50px;
+}
+footer{
+    font-size: 1.2em;
+    color: gray;
+    background-color: #222;
+    padding: 30px;
+    text-align: center;
+    margin: 0px;
+}
+footer a, footer a:hover{
+    text-decoration: none;
+    color: #ddd;
+}
+footer a:hover{
+    color: white;
+}
