@@ -18,13 +18,14 @@ hr.short{
 }
 .heading{
     margin: 0px;
+    font-size: 3em;
     background-color: #2a2a2a;
 }
 .heading span{
     color: #5f5;
 }
 .sayn{
-    width: 150px;
+    width: 100px;
     display: block;
     margin: auto auto;
     z-index: -1;
@@ -37,11 +38,11 @@ hr.short{
     margin: 0px 15px;
 }
 .subheading{
-    font-size: xx-large;
+    font-size: x-large;
     color: #aaa;
 }
 .subheading b{
-    color: #ddd
+    color: #ddd;
 }
 .years{
     font-size: medium;
@@ -55,6 +56,9 @@ hr.short{
 }
 .links a{
     text-decoration: none;
+}
+.socialicon{
+    height: 28px;
 }
 .hoverlink{
     color: #00c33b;
@@ -97,20 +101,17 @@ font a, font a:hover{
     justify-content: center;
 }
 .card{
-    margin: 25px;
+    margin: 15px;
     border-radius: 20px;
-    padding: 25px;
+    padding: 20px 10px;
     text-align: center;
     flex: 0 1 40rem;
     background-color: #222;
 }
 .card-title{
-    font-size: x-large ;
+    font-size: 1.25em;
+    line-height: 1.25;
 }
-.card-text{
-    margin-top: 25px;
-}
-
 .card .btn{
     padding: 10px 15%;
     font-size: large;
@@ -123,6 +124,7 @@ footer{
     padding: 30px;
     text-align: center;
     margin: 0px;
+    width: 100%;
 }
 footer a, footer a:hover{
     text-decoration: none;
