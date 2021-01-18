@@ -1,5 +1,5 @@
 bloge = document.querySelector("#bloglist");
-cproxyURL = 'http://sayncors.herokuapp.com/'
+cproxyURL = 'https://sayncors.herokuapp.com/'
 // cproxyURL = 'http://0.0.0.0:5000/'
 feedURL = 'https://saynblog.blogspot.com/feeds/posts/default';
 fetch(cproxyURL + feedURL).then(response => {
