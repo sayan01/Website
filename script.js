@@ -1,5 +1,6 @@
 bloge = document.querySelector("#bloglist");
-cproxyURL = 'https://cors-anywhere.herokuapp.com/'
+cproxyURL = 'http://sayncors.herokuapp.com/'
+// cproxyURL = 'http://0.0.0.0:5000/'
 feedURL = 'https://saynblog.blogspot.com/feeds/posts/default';
 fetch(cproxyURL + feedURL).then(response => {
     response.text().then(text => {
@@ -18,14 +19,39 @@ fetch(cproxyURL + feedURL).then(response => {
                 }
             }
         }
-        if (i != 0) {
-            blogh = document.querySelector('#blogheading');
-            blogh.setAttribute('style', 'display:inherit');
-        }
+        if (i != 0) unhide('.bloghide')
     });
 });
 
-function createCard(title, link) {
+
+videoe = document.querySelector('#videolist');
+videorss = 'https://www.youtube.com/feeds/videos.xml?channel_id=';
+channelid = 'UCFupCEK--j387JHG8uS5Qcg';
+fetch(cproxyURL + videorss + channelid).then(response => {
+    response.text().then(text => {
+        parser = new DOMParser();
+        xml = parser.parseFromString(text, 'text/xml');
+        entries = xml.getElementsByTagName("entry");
+        var count = 0;
+        recentThreshold = 30; // how many days old video should be NOT-recent?
+        for (i = 0; i < entries.length; i++) {
+            const entry = entries[i].children;
+            var title = entry[3].innerHTML;
+            var link = entry[4].getAttributeNode('href').value;
+            var date = entry[6].innerHTML;
+            var thumblink = entry[8].children[2].getAttributeNode('url').value;
+            if (daydiff(date) < recentThreshold) {
+                videoe.appendChild(createCard(title, link, thumblink, date))
+                count++;
+            }
+        }
+        if (count != 0) unhide('.videohide')
+    });
+});
+
+
+
+function createCard(title, link, image, date) {
     var card = document.createElement("div");
     card.classList.add("card");
 
@@ -41,13 +67,46 @@ function createCard(title, link) {
 
     var cardbutton = document.createElement("a");
     cardbutton.setAttribute('href', link);
-    cardbutton.setAttribute('class', 'btn btn-success');
     cardbutton.setAttribute('target', '_blank');
-    cardbutton.innerHTML = 'Read the Blog'
+
+    if (!image) {
+        cardbutton.classList.add('btn');
+        cardbutton.classList.add('btn-success');
+        cardbutton.innerHTML = 'Read the Blog'    
+    }
+    else {
+        var cardimage = document.createElement("img");
+        cardimage.setAttribute('src', image);
+        cardimage.setAttribute('alt', 'thumbnail');
+
+        var imageholder = document.createElement("div");
+        imageholder.classList.add('imgcon');
+        imageholder.appendChild(cardimage);
+        cardbutton.appendChild(imageholder);
+    }
 
     cardtext.appendChild(cardbutton);
     cardbody.appendChild(cardtitle);
     cardbody.appendChild(cardtext);
     card.appendChild(cardbody);
+
+    if (date) {
+        var cardfooter = document.createElement('div');
+        cardfooter.classList.add('card-footer');
+        cardfooter.innerHTML = daydiff(date) + ' days ago'
+        card.appendChild(cardfooter);
+    }
+
     return card;
+}
+
+function unhide(classname) {
+    document.querySelectorAll(classname).forEach(element => {
+        element.setAttribute('style', 'display:inherit');
+    });
+}
+
+function daydiff(date) {
+    milsecinaDay = 86400 * 1000;
+    return Math.floor((new Date() - new Date(date)) / milsecinaDay)
 }

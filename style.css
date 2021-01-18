@@ -11,7 +11,7 @@ hr{
     background-color: white;
 }
 hr.short{
-    margin:25px 35%;
+    margin:50px 35% 50px 35%;
 }
 .center{
     text-align: center;
@@ -95,17 +95,20 @@ font a, font a:hover{
         display: none;
     }
 }
-#bloglist{
+#bloglist, #videolist{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+.videohide, .bloghide {
+    display: none;
 }
 .card{
     margin: 15px;
     border-radius: 20px;
     padding: 20px 10px;
     text-align: center;
-    flex: 0 1 40rem;
+    flex: 0 1 30rem;
     background-color: #222;
 }
 .card-title{
@@ -116,6 +119,28 @@ font a, font a:hover{
     padding: 10px 15%;
     font-size: large;
     border-radius: 50px;
+}
+.imgcon {
+    width: 100%;
+    padding-top: 55%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+}
+.card-text img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    position: absolute;
+    top: -100%;
+    right: -100%;
+    bottom: -100%;
+    left: -100%;
+}
+.card-footer {
+    background-color: inherit;
+    border: none;
+    color: gray;
 }
 footer{
     font-size: 1.2em;
