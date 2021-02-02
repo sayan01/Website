@@ -1,13 +1,17 @@
+/* recent blogs and recent videos */
 bloge = document.querySelector("#bloglist");
+videoe = document.querySelector('#videolist');
 cproxyURL = 'https://sayncors.herokuapp.com/'
-// cproxyURL = 'http://0.0.0.0:5000/'
+cproxyURL = 'http://0.0.0.0:5000/'
+
+/* blogs */
 feedURL = 'https://saynblog.blogspot.com/feeds/posts/default';
 fetch(cproxyURL + feedURL).then(response => {
     response.text().then(text => {
         parser = new DOMParser();
         xml = parser.parseFromString(text, 'text/xml');
         entries = xml.getElementsByTagName("entry");
-        var i = 0;
+        var count = 0;
         for (i = 0; i < entries.length; i++) {
             entry = entries[i].childNodes;
             for (var j = 0; j < entry.length; j++) {
@@ -15,16 +19,18 @@ fetch(cproxyURL + feedURL).then(response => {
                     var title = entry[j].getAttributeNode('title').value;
                     var link = entry[j].getAttributeNode('href').value;
                     bloge.appendChild(createCard(title, link));
+                    count++;
                     break;
                 }
             }
         }
-        if (i != 0) unhide('.bloghide')
+        if (count == 0) {
+            bloge.innerHTML = "Nothing here!"
+        }
     });
 });
 
-
-videoe = document.querySelector('#videolist');
+/* videos */
 videorss = 'https://www.youtube.com/feeds/videos.xml?channel_id=';
 channelid = 'UCFupCEK--j387JHG8uS5Qcg';
 fetch(cproxyURL + videorss + channelid).then(response => {
@@ -44,12 +50,19 @@ fetch(cproxyURL + videorss + channelid).then(response => {
                 videoe.appendChild(createCard(title, link, thumblink, date))
                 count++;
             }
+            if (count == 6) break;
         }
-        if (count != 0) unhide('.videohide')
+        if (count == 0) {
+            videoe.innerHTML = "Nothing here!"
+        }
     });
 });
 
+/* footer year */
 
+foote = document.getElementsByTagName('footer');
+year = new Date().getFullYear();
+foote[0].innerHTML = foote[0].innerHTML.replace("##year##", year);
 
 function createCard(title, link, image, date) {
     var card = document.createElement("div");
@@ -58,7 +71,7 @@ function createCard(title, link, image, date) {
     var cardbody = document.createElement("div");
     cardbody.classList.add("card-body");
 
-    var cardtitle = document.createElement("h2");
+    var cardtitle = document.createElement("div");
     cardtitle.classList.add("card-title");
     cardtitle.innerHTML = title;
 
