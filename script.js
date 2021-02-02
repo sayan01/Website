@@ -2,7 +2,7 @@
 bloge = document.querySelector("#bloglist");
 videoe = document.querySelector('#videolist');
 cproxyURL = 'https://sayncors.herokuapp.com/'
-cproxyURL = 'http://0.0.0.0:5000/'
+// cproxyURL = 'http://0.0.0.0:5000/'
 
 /* blogs */
 feedURL = 'https://saynblog.blogspot.com/feeds/posts/default';
