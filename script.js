@@ -39,7 +39,7 @@ fetch(cproxyURL + videorss + channelid).then(response => {
         xml = parser.parseFromString(text, 'text/xml');
         entries = xml.getElementsByTagName("entry");
         var count = 0;
-        recentThreshold = 30; // how many days old video should be NOT-recent?
+        recentThreshold = 365; // how many days old video should be NOT-recent?
         for (i = 0; i < entries.length; i++) {
             const entry = entries[i].children;
             var title = entry[3].innerHTML;
@@ -67,15 +67,19 @@ foote[0].innerHTML = foote[0].innerHTML.replace("##year##", year);
 function createCard(title, link, image, date) {
     var card = document.createElement("div");
     card.classList.add("card");
+    card.classList.add("bg-dark");
+
+    var cardheader = document.createElement("div");
+    cardheader.classList.add("card-header");
 
     var cardbody = document.createElement("div");
     cardbody.classList.add("card-body");
 
-    var cardtitle = document.createElement("div");
+    var cardtitle = document.createElement("h2");
     cardtitle.classList.add("card-title");
     cardtitle.innerHTML = title;
 
-    var cardtext = document.createElement("p");
+    var cardtext = document.createElement("div");
     cardtext.classList.add("card-text");
 
     var cardbutton = document.createElement("a");
@@ -83,8 +87,7 @@ function createCard(title, link, image, date) {
     cardbutton.setAttribute('target', '_blank');
 
     if (!image) {
-        cardbutton.classList.add('btn');
-        cardbutton.classList.add('btn-success');
+        cardbutton.classList.add('btn', 'btn-primary');
         cardbutton.innerHTML = 'Read the Blog'    
     }
     else {
@@ -98,9 +101,10 @@ function createCard(title, link, image, date) {
         cardbutton.appendChild(imageholder);
     }
 
-    cardtext.appendChild(cardbutton);
-    cardbody.appendChild(cardtitle);
     cardbody.appendChild(cardtext);
+    cardbody.appendChild(cardbutton);
+    cardheader.append(cardtitle);
+    card.appendChild(cardheader);
     card.appendChild(cardbody);
 
     if (date) {
