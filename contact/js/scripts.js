@@ -1,5 +1,5 @@
 function SendMail(){
-	var link = 'mailto:sgic2001@gmail.com';
+	var link = 'mailto:me@sayn.work';
 	var subject,body,i=0;
 	Subject = document.getElementById("subject");
 	Body = document.getElementById("body");
