@@ -1,69 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+html{
+	height: 100vh;
+}
 *{
-	font-family: 'Roboto', sans-serif;
 	margin: 0px;
 	padding: 0px;
 	outline: none;
 }
 body{
-	margin: 20px;
+	background-color: black;
 }
-textarea{
-	resize: none;
+.navbar, footer{
+	min-height: 70px;
+	text-align: center;
 }
 .heading{
-	margin-bottom: 20px;
+	margin: 20px 0;
 	text-align: center;
 	font-weight: 100;
 	font-size: 40px;
+	color: white;
 }
-#mailform{
+.mailform{
 	display: flex;
 	flex-direction: column;
-	background-color: lightsteelblue;
-	padding: 100px 10px;
-	border-radius: 10px;
-}
-.btn{
-	margin: 10px auto;
-	padding: 8px 25px;
-	border-radius: 100px;
-	font-size: large;
-	background-color: #3F51B5;
-	text-align: center;
-	cursor: pointer;
-	font-size: 20px;
-	color: #fff;
-
-	transition-property: background;
-	transition-duration: 0.2s;
-	transition-timing-function: ease-in;
-}
-.btn:hover{
-	background-color: #7A71F5;
+	align-items: center;
+	min-height: calc(100vh - 70px - 70px);
+	padding: 0 10px;
 }
 .form-group {
-	margin: 10px auto;
 	display: flex;
 	flex-direction: column;
+	margin: 10px 10px;
+	border-radius: 10px;
+	width: clamp(250px, 90%, 700px);
+}
+.inner{
+	margin: 10px;
 }
 .form-control{
-	border: 0px;
-	padding: 10px;
-	margin: 10px 0px;
-	width: 400px;
-	border-radius: 5px;
-	border-bottom: 4px solid white;
-	font-family: 'Lucida Grande','Lucida Sans', 'Lucida Sans Regular', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-	font-size: 15px;
-
-	transition-property: border-bottom-color;
-	transition-duration: 0.5s;
+	margin: 10px 0;
 }
-.form-control:focus {
-	border-bottom: 4px solid #3F51B5;
+.btn{
+	font-size: large;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 0 0 10px 10px;
+	height:50px;
+	line-height: 50px;
+	padding: 0;
+	margin: 10px 0 0 0 ;
 }
 label{
-	color: #2a2a2a;
 	font-size: 20px;
+}
+footer{
+    font-size: 1.2em;
+    height: 70px;
+    line-height: 70px;
+    width: 100%;
+}
+footer a, footer a:hover{
+    text-decoration: none;
+    color: #ddd;
+}
+footer a:hover{
+    color: white;
 }
