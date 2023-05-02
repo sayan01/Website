@@ -3000,10 +3000,12 @@ input, select, textarea {
 		.spotlights > section > .image {
 			background-position: center center;
 			background-size: cover;
+      background-repeat: no-repeat;
 			border-radius: 0;
 			display: block;
 			position: relative;
 			width: 25em;
+      transition: background-size 500ms ease-in-out;
 		}
 
 			.spotlights > section > .image img {
@@ -3058,11 +3060,11 @@ input, select, textarea {
 				opacity: 1;
 			}
 
-		.spotlights > section:nth-child(2) {
+		.spotlights > section:nth-child(odd) {
 			background-color: rgba(0, 0, 0, 0.05);
 		}
 
-		.spotlights > section:nth-child(3) {
+		.spotlights > section:nth-child(even) {
 			background-color: rgba(0, 0, 0, 0.1);
 		}
 
