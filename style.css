@@ -47,16 +47,9 @@ body{
     padding: 20px;
 }
 .twopane {
-    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-}
-.twopane .links {
-    flex: 1 1 20rem;
-}
-.twopane .bio {
-    flex: 1 1 40rem;
 }
 .socialicon{
     height: 28px;
